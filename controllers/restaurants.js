@@ -17,4 +17,13 @@ router.get('/', function(req, res, next)
     })
 })
 
+router.delete('/:id', function(req, res, next) 
+{
+    const identifiant = req.params.id
+    Restaurants.delete(identifiant)
+    .then((restaurants) => {
+        res.json(restaurants)
+    })
+})
+
 module.exports = router
